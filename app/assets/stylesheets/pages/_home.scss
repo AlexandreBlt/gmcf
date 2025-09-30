@@ -130,22 +130,76 @@ align-items: center;
 }
 
 .photos {
-width: 100%;
-  max-width: 1200px;
-  height: 80vh;
+width: 100vw;            /* prend toute la largeur de l'écran */
+  max-width: 100%;         /* pas de limite */
+  height: 80vh;            /* hauteur relative à l'écran */
   padding: 10px;
-  position: relative;
   display: flex;
-  flex-wrap: wrap; /* permet aux images de se mettre à la ligne */
-  gap: 10px;
-  justify-content: center;
-  align-items: center; /* centre les images horizontalement */
+  flex-wrap: wrap;         /* les images passent à la ligne */
+  gap: 10px;               /* espace entre les images */
+  justify-content: center; /* centre les images horizontalement */
+  align-items: center; /* aligne les images en haut */         /* scroll si nécessaire */
+  margin: 0;
+  /* centre les images horizontalement */
 }
 
 .photos img {
-   display: flex;
-  max-width: 225px; /* taille maximale */
-  height: auto;   /* conserve la proportion originale */  /* s’adapte à l’écran */     /* conserve la proportion originale */
-  border-radius: 5px;
-  transition: transform 0.3s;
+display: block;          /* mieux que flex pour les images */
+  max-width: 225px;        /* limite la taille des images */
+  height: auto;        /* s’adapte à l’écran */     /* conserve la proportion originale */
+}
+
+.button-plus {
+  height:  auto;
+  width:  250px;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #388A3B;
+  color: white;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal {
+  display: none; /* cachée par défaut */
+  position: fixed; /* reste fixe même en scroll */
+  z-index: 1000;  /* au-dessus de tout */
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto; /* scroll si contenu dépasse */
+  background-color: rgba(0,0,0,0.5); /* fond semi-transparent */
+  justify-content: center;
+  align-items: center;
+  display: flex; /* centrer horizontalement et verticalement */
+}
+
+/* Contenu de la modal */
+.modal-content {
+  background-color: #0D4429;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px; /* largeur max */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+}
+
+/* Bouton de fermeture */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
 }

@@ -8,9 +8,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
     <%= yield %>
+   <%= javascript_include_tag 'script', 'data-turbo-track': 'reload' %>
   </body>
+
 </html>
