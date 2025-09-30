@@ -1,9 +1,11 @@
+.home-page {
+  padding: 2rem;
+}
 .home-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start; // mieux pour l’accueil
-  padding: 2rem;
+  padding: 0 2rem;
   min-height: 100vh; // plus sûr que 100vh fixe
 }
 .top-section {
@@ -11,13 +13,18 @@
   max-width: 1200px;
   display: flex;
   flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 2rem;
 }
 
 .logo-container {
   width: 100%;
   display: flex;
   flex-direction: row;
-}
+  justify-content: start;
+  align-items: start
+  }
 
 .logo {
   width: 150px;
@@ -45,23 +52,100 @@
 }
 
 .banner {
-  width: 100%;
-  margin-top: 2rem;
+  width: 90%;
   background-color: #388A3B;
+  border-radius: 32px;
   color: white;
-  padding: 2rem;
+  padding: 3rem 2rem 0 2rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.welcome-message {
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(1.5rem, 8vw, 5rem);
+  font-weight: bold;
+  margin-left: 3rem;
+  width: 75%;
 }
 
 .description-banner {
 display: flex;
 flex-direction: row;
+align-items: center;
+}
+
+.description-banner-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: bold;
+  width: 40%;
 }
 
 .img-banner {
-  max-width: 100%;
+  max-width: 25%;
   height: auto;
+  background-color: #388A3B;
+}
+
+.img-global-banner {
+  position: absolute;
+  top: 20%;
+  right: 0%;
+  width: 50%;
+  height: auto; // pour un effet subtil}
+}
+
+.info-section {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 500;
+}
+
+.contact-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  color: black;
+  font-weight: 600;
+  gap: 2rem;
+  text-decoration: none;
+}
+
+.contact-button {
+  text-decoration: none;
+  color: black;
+}
+
+.photos {
+width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; /* permet aux images de se mettre à la ligne */
+  gap: 10px;
+  justify-content: center;
+  align-items: center; /* centre les images horizontalement */
+}
+
+.photos img {
+   display: flex;
+  max-width: 225px; /* taille maximale */
+  height: auto;   /* conserve la proportion originale */  /* s’adapte à l’écran */     /* conserve la proportion originale */
+  border-radius: 5px;
+  transition: transform 0.3s;
 }
