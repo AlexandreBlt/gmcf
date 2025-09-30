@@ -1,20 +1,32 @@
+/* ============================
+   Container principal
+============================ */
+body {
+  overflow-x: hidden;
+}
+
 .home-page {
   padding: 2rem;
 }
+
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; // mieux pour l’accueil
+  justify-content: flex-start;
   padding: 0 2rem;
-  min-height: 100vh; // plus sûr que 100vh fixe
+  min-height: 100vh;
 }
+
+/* ============================
+   Section supérieure / logo
+============================ */
 .top-section {
   width: 100%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 2rem;
 }
 
@@ -22,9 +34,11 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: start
-  }
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap; /* responsive sur mobile */
+}
 
 .logo {
   width: 150px;
@@ -36,51 +50,59 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 1rem;
+  flex: 1;
 }
 
 .title {
   font-family: "Alan Sans", sans-serif;
-  font-size: 5rem; // plus raisonnable
+  font-size: clamp(2rem, 5vw, 5rem);
   color: black;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 2rem);
   color: #555;
   margin: 0;
 }
 
+/* ============================
+   Banner
+============================ */
 .banner {
-  width: 90%;
+  width: 100%;
   background-color: #388A3B;
   border-radius: 32px;
   color: white;
   padding: 3rem 2rem 0 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
+  margin: 2rem auto;
+  position: relative;
 }
 
 .welcome-message {
   font-family: "Open Sans", sans-serif;
   font-size: clamp(1.5rem, 8vw, 5rem);
   font-weight: bold;
-  margin-left: 3rem;
-  width: 75%;
+  margin-left: 4rem;
+  width: 100%;
 }
 
 .description-banner {
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // margin-top: 1rem;
+  gap: 1rem;
 }
 
 .description-banner-text {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(1rem, 5vw, 2rem);
   font-weight: bold;
-  width: 40%;
+  width: 40%;  /* desktop classique */
 }
 
 .img-banner {
@@ -91,37 +113,111 @@ align-items: center;
 
 .img-global-banner {
   position: absolute;
-  top: 20%;
-  right: 0%;
-  width: 50%;
-  height: auto; // pour un effet subtil}
+  top: -10%;
+  right: -12%;
+  width: 58%;
+  max-width: 100vw; /* ne dépasse jamais l’écran */
+  height: auto;
 }
 
+.img-hand {
+  width: 90%;
+  height: auto;
+}
+/* ============================
+   Info section
+============================ */
 .info-section {
   width: 80%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  margin-top: 2rem;
+  margin: 2rem auto;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
   color: black;
   font-weight: 500;
 }
 
+/* ============================
+   Contact section
+============================ */
 .contact-section {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; /* responsive sur mobile */
   justify-content: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1rem, 2vw, 2rem);
   color: black;
   font-weight: 600;
-  gap: 2rem;
+  gap: 1rem;
+  margin: 2rem auto;
   text-decoration: none;
+}
+
+/* ============================
+   Media Queries
+============================ */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .title {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+  .subtitle {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  .description-banner-text {
+    width: 50%;
+  }
+  .img-global-banner {
+    width: 40%;
+    top: 15%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .top-section,
+  .banner,
+  .info-section,
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .description-banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description-banner-text,
+  .img-banner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .img-global-banner {
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+  }
 }
 
 .contact-button {
