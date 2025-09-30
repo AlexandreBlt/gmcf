@@ -1,0 +1,67 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; // mieux pour l’accueil
+  padding: 2rem;
+  min-height: 100vh; // plus sûr que 100vh fixe
+}
+.top-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.title {
+  font-family: "Alan Sans", sans-serif;
+  font-size: 5rem; // plus raisonnable
+  color: black;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 2rem;
+  color: #555;
+  margin: 0;
+}
+
+.banner {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #388A3B;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description-banner {
+display: flex;
+flex-direction: row;
+}
+
+.img-banner {
+  max-width: 100%;
+  height: auto;
+}
