@@ -49,5 +49,4 @@ USER rails:rails
 
 EXPOSE 3000
 
-# Démarrer Puma directement
-CMD ["bin/rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "puma", "-b", "tcp://0.0.0.0:3000"]
