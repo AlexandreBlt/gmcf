@@ -159,67 +159,6 @@ body {
   text-decoration: none;
 }
 
-/* ============================
-   Media Queries
-============================ */
-
-/* Tablette */
-@media (max-width: 1024px) {
-  .title {
-    font-size: clamp(2rem, 6vw, 4rem);
-  }
-  .subtitle {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-  }
-  .description-banner-text {
-    width: 50%;
-  }
-  .img-global-banner {
-    width: 40%;
-    top: 15%;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .top-section,
-  .banner,
-  .info-section,
-  .contact-section {
-    padding: 1rem;
-  }
-
-  .logo-container {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .text-container {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .description-banner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .description-banner-text,
-  .img-banner {
-    width: 100%;
-    max-width: none;
-  }
-
-  .img-global-banner {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-    margin-top: 1rem;
-  }
-}
-
 .contact-button {
   text-decoration: none;
   color: black;
@@ -244,7 +183,6 @@ display: block;          /* mieux que flex pour les images */
   max-width: 225px;        /* limite la taille des images */
   height: auto;        /* s’adapte à l’écran */     /* conserve la proportion originale */
 }
-
 .button-plus {
   height:  auto;
   width:  250px;
@@ -261,6 +199,129 @@ display: block;          /* mieux que flex pour les images */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+/* ============================
+   Media Queries
+============================ */
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .title {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+  .subtitle {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  .description-banner-text {
+    width: 50%;
+  }
+  .img-global-banner {
+    width: 40%;
+    top: 15%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 0 1rem;
+  }
+  .top-section,
+  .banner {
+    padding: 1rem;
+    // margin-left: 2rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .info-section {
+    // padding: 1rem;
+    // margin-left: 2rem;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .contact-section {
+    width: 100%;
+    padding: 1rem;
+    // margin-left: 2rem;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .welcome-message {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .description-banner {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .description-banner-text,
+  .img-banner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .img-global-banner {
+    // position: relative;
+    // width: 100%;
+    // top: 100%;
+    // right: -17%;
+    // margin-top: 1rem;
+    display: none;
+  }
+
+  .photos {
+    height: auto;            /* hauteur automatique */
+    padding: 5px;
+    gap: 5px;
+    margin-bottom: 10px;              /* espace réduit entre les images */
+  }
+
+  .photos img {
+    max-width: 50px;
+  }
+
+  .button-plus {
+  height:  auto;
+  width:  250px;
+  margin-left: 1rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #388A3B;
+  color: white;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+}
+
+
+
+
 
 // .modal {
 //   display: none; /* cachée par défaut */
